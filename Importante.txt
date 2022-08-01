@@ -1,0 +1,43 @@
+1. crear entorno virtual | python -m venv django-venv
+2. Si se crea el entorno y sale error (Windows) | Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+3. Activar entorno virtual (windows)  | .\django-venv\Scripts\activate
+4. Tener instalado pip y revisar si esta instalado  | pip --version
+5. instalar django | py -m pip install Django
+6. verificar las instalaciones en el entorno "django-venv" | pip freeze
+
+*******************Creando un proyecto************************
+*Creando el proyecto django |django-admin startproject mysite
+*entrando a la carpeta del proyceto creado | cd mysite
+*Verificando El servidor de desarrollo  |  py manage.py runserver
+
+*Crear la aplicación Encuestas
+*Para crear su aplicación, asegúrese de estar en el mismo directorio manage.py y escriba este comando | py manage.py encuestas startapp
+Primero crear tablas en la base de datos
+* Para hacer eso, ejecute el siguiente comando:   |python manage.py migrate
+*Ahora Django sabe incluir la pollsaplicación. Ejecutemos otro comando: |py manage.py makemigrations polls
+* | makemigrations |  le está diciendo a Django que ha realizado algunos cambios en sus modelos (en este caso, ha realizado otros nuevos) y que desea que los cambios se almacenen como una migración. 
+* |py manage.py sqlmigrate polls 0001| El sqlmigratecomando toma nombres de migración y devuelve su SQL
+*| python manage.py check | Si estás interesado, también puedes ejecutar ; esto verifica cualquier problema en su proyecto sin realizar migraciones o tocar la base de datos
+*| py manage.py migrate | Ahora, migratevuelva a ejecutar para crear esas tablas modelo en su base de datos:
+
+****************************************************************
+Las migraciones son muy poderosas y le permiten cambiar sus modelos con el tiempo, a medida que desarrolla su proyecto, sin la necesidad de eliminar su base de datos o tablas y crear otras nuevas: se especializa en actualizar su base de datos en vivo, sin perder datos. Los cubriremos con más profundidad en una parte posterior del tutorial, pero por ahora, recuerde la guía de tres pasos para realizar cambios en el modelo:
+
+1. Cambia tus modelos (en models.py).
+2. Ejecutar para crear migraciones para esos cambios |python manage.py makemigrations
+3. Ejecutar para aplicar esos cambios a la base de datos.| python manage.py migrate
+
+***************************************************************
+
+****************Crear un usuario administrador *****************
+*| py manage.py createsuperuser| Primero necesitaremos crear un usuario que pueda iniciar sesión en el sitio de administración. Ejecute el siguiente comando:
+* usuario : admin
+* contraseña: admin
+
+
+*| py manage.py runserver| Iniciar el servidor de desarrollo
+
+
+
+
+Escribiendo tu primera aplicación Django, parte 5 *aqui quede
